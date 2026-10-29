@@ -7,6 +7,6 @@ Every folder is one episode: a written guide (`README.md`) and the files used in
 
 | # | Episode | Video |
 |---|---------|-------|
-| 001 | [Self-host Gitea with Docker Compose and PostgreSQL](001-gitea-docker/) | [▶ watch](https://youtu.be/znjTBW9-Us4) |
+| 001 | [Self-host Gitea with Docker Compose and PostgreSQL](001-gitea-docker/) | [▶ watch](https://youtu.be/WxCEFIljv20) |
 
 Licensed under the [MIT License](LICENSE).
