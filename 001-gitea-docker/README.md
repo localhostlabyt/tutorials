@@ -1,12 +1,12 @@
 # Self-host Gitea with Docker Compose and PostgreSQL
 
-▶ [Watch the video](https://youtu.be/WxCEFIljv20) · EP 001 · Tested on: Debian 13 (trixie), Gitea 28.2.0, PostgreSQL 18
+▶ [Watch the video](https://youtu.be/1xREQPLXfaQ) · EP 001 · Tested on: Debian 13 (trixie), Gitea 28.2.0, PostgreSQL 18
 
 Self-host Gitea 28.2.0 with Docker Compose and PostgreSQL 18 on Debian 13 (trixie), then push your first repository over SSH.
 
 ## Intro
 
-[▶ 0:00](https://youtu.be/WxCEFIljv20?t=0s)
+[▶ 0:00](https://youtu.be/1xREQPLXfaQ?t=0s)
 
 **What you need**
 
@@ -16,7 +16,7 @@ Self-host Gitea 28.2.0 with Docker Compose and PostgreSQL 18 on Debian 13 (trixi
 
 ## Install Docker
 
-[▶ 0:29](https://youtu.be/WxCEFIljv20?t=29s)
+[▶ 0:30](https://youtu.be/1xREQPLXfaQ?t=30s)
 
 Let's connect to the server over SSH. A quick check confirms Debian 13, two cores and two gigabytes of memory.
 
@@ -50,7 +50,7 @@ docker --version && docker compose version
 
 ## Compose file
 
-[▶ 1:43](https://youtu.be/WxCEFIljv20?t=103s)
+[▶ 1:43](https://youtu.be/1xREQPLXfaQ?t=103s)
 
 Create a directory for the project. Instead of a hard-coded database password, generate a random one and keep it in a .env file. Add the address your users will reach Gitea at. I'm using the server's IP, but a domain name works too. Then make the file readable only by your user.
 
@@ -114,13 +114,13 @@ curl -sI http://localhost:3000 | head -1
 
 ## Web installer
 
-[▶ 3:24](https://youtu.be/WxCEFIljv20?t=204s)
+[▶ 3:24](https://youtu.be/1xREQPLXfaQ?t=204s)
 
 Open port 3000 in your browser, and you'll see the initial configuration page. The database section is already filled in from the environment variables, so leave it as it is. Give your instance a name. The SSH port and the base URL are already set from the compose file, so there's nothing to change here. Finally, expand the administrator account settings and create the first admin user. Click install, and after a few seconds you're logged in to your own Gitea.
 
 ## First repository
 
-[▶ 4:19](https://youtu.be/WxCEFIljv20?t=259s)
+[▶ 4:18](https://youtu.be/1xREQPLXfaQ?t=258s)
 
 Let's create a repository. Click the plus icon and choose new repository. Call it hello-gitea, and create it. Gitea shows the commands to push an existing project. Switch to SSH, and you get the address with port 2222.
 
