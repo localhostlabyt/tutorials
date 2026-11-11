@@ -1,0 +1,4 @@
+{$GITEA_DOMAIN} {
+	tls internal
+	reverse_proxy server:3000
+}
