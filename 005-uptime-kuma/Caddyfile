@@ -1,0 +1,14 @@
+{$GITEA_DOMAIN} {
+	tls internal
+	reverse_proxy server:3000
+}
+
+vault.home.arpa {
+	tls internal
+	reverse_proxy vaultwarden:80
+}
+
+uptime.home.arpa {
+	tls internal
+	reverse_proxy uptime-kuma:3001
+}
