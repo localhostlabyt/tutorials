@@ -161,6 +161,16 @@ cd ../gitea && docker compose up -d
 docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Status}}"
 ```
 
+> **Changed only the Caddyfile?** Here Caddy picks up the new site because `compose.yaml` changed too,
+> so Compose recreates the container and it starts with the new config. If you edit just the `Caddyfile`,
+> `docker compose up -d` does nothing and Caddy keeps the old config. Reload it without downtime:
+>
+> ```bash
+> docker compose exec caddy caddy reload --config /etc/caddy/Caddyfile
+> ```
+>
+> (`docker compose restart caddy` works too, with a short interruption.)
+
 ## Create your account
 
 [▶ 2:18](https://youtu.be/phirbPfpAoA?t=138s)
