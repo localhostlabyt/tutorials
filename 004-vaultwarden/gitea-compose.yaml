@@ -1,0 +1,54 @@
+services:
+  caddy:
+    image: docker.io/library/caddy:2.11.7
+    restart: always
+    environment:
+      - GITEA_DOMAIN=${GITEA_DOMAIN}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./caddy/data:/data
+      - ./caddy/config:/config
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    networks:
+      - default
+      - proxy
+
+  server:
+    image: docker.gitea.com/gitea:28.2.0
+    restart: always
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+      - GITEA__database__DB_TYPE=postgres
+      - GITEA__database__HOST=db:5432
+      - GITEA__database__NAME=gitea
+      - GITEA__database__USER=gitea
+      - GITEA__database__PASSWD=${POSTGRES_PASSWORD}
+      - GITEA__server__DOMAIN=${GITEA_DOMAIN}
+      - GITEA__server__SSH_DOMAIN=${GITEA_DOMAIN}
+      - GITEA__server__SSH_PORT=2222
+      - GITEA__server__ROOT_URL=https://${GITEA_DOMAIN}/
+    volumes:
+      - ./gitea:/data
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - "2222:22"
+    depends_on:
+      - db
+
+  db:
+    image: docker.io/library/postgres:18
+    restart: always
+    environment:
+      - POSTGRES_USER=gitea
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=gitea
+    volumes:
+      - ./postgres:/var/lib/postgresql
+
+networks:
+  proxy:
+    external: true

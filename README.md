@@ -10,5 +10,6 @@ Every folder is one episode: a written guide (`README.md`) and the files used in
 | 001 | [Self-host Gitea with Docker Compose and PostgreSQL](001-gitea-docker/) | [▶ watch](https://youtu.be/1xREQPLXfaQ) |
 | 002 | [Your first 10 minutes on a new Linux server: SSH keys, firewall, auto-updates](002-new-server/) | [▶ watch](https://youtu.be/ipP4cv9z8AY) |
 | 003 | [Caddy reverse proxy with automatic HTTPS for self-hosted apps (Gitea + Docker Compose)](003-caddy-https/) | [▶ watch](https://youtu.be/YQueGn2O6bM) |
+| 004 | [Vaultwarden setup with Docker Compose: self-hosted Bitwarden password manager (HTTPS with Caddy)](004-vaultwarden/) | [▶ watch](https://youtu.be/phirbPfpAoA) |
 
 Licensed under the [MIT License](LICENSE).

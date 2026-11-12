@@ -1,0 +1,15 @@
+services:
+  vaultwarden:
+    image: docker.io/vaultwarden/server:1.37.5
+    restart: always
+    environment:
+      - DOMAIN=https://vault.home.arpa
+      - SIGNUPS_ALLOWED=true
+    volumes:
+      - ./data:/data
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true
