@@ -1,0 +1,2 @@
+export RESTIC_REPOSITORY=sftp:backup@nas:homelab
+export RESTIC_PASSWORD_FILE=/etc/restic/password

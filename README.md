@@ -12,5 +12,6 @@ Every folder is one episode: a written guide (`README.md`) and the files used in
 | 003 | [Caddy reverse proxy with automatic HTTPS for self-hosted apps (Gitea + Docker Compose)](003-caddy-https/) | [▶ watch](https://youtu.be/YQueGn2O6bM) |
 | 004 | [Vaultwarden setup with Docker Compose: self-hosted Bitwarden password manager (HTTPS with Caddy)](004-vaultwarden/) | [▶ watch](https://youtu.be/phirbPfpAoA) |
 | 005 | [Uptime Kuma Docker Compose setup: monitor your homelab with push notifications (ntfy)](005-uptime-kuma/) | [▶ watch](https://youtu.be/pExPTlWe5OU) |
+| 006 | [Restic backup tutorial: back up Docker Compose apps to a NAS over SFTP (and restore)](006-restic-backup/) | [▶ watch](https://youtu.be/j9rCJfzhKps) |
 
 Licensed under the [MIT License](LICENSE).

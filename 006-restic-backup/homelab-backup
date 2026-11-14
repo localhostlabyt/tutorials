@@ -1,0 +1,19 @@
+#!/bin/sh
+# Nightly homelab backup: stop the apps, copy everything with restic, start them again.
+set -eu
+. /etc/restic/env
+APPS="/home/admin/uptime-kuma /home/admin/vaultwarden /home/admin/gitea"
+
+start_apps() {
+    for app in $APPS; do (cd "$app" && docker compose start); done
+}
+# stopped containers = consistent database files; start again even if the backup fails
+trap start_apps EXIT
+for app in $APPS; do (cd "$app" && docker compose stop); done
+
+restic backup --tag nightly /home/admin
+trap - EXIT
+start_apps
+
+# keep 7 daily, 4 weekly and 6 monthly snapshots, delete the rest
+restic forget --tag nightly --keep-daily 7 --keep-weekly 4 --keep-monthly 6 --prune
