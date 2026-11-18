@@ -1,0 +1,16 @@
+services:
+  adguardhome:
+    image: docker.io/adguard/adguardhome:v0.107.80
+    restart: always
+    volumes:
+      - ./work:/opt/adguardhome/work
+      - ./conf:/opt/adguardhome/conf
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true

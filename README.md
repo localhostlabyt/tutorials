@@ -14,5 +14,6 @@ Every folder is one episode: a written guide (`README.md`) and the files used in
 | 005 | [Uptime Kuma Docker Compose setup: monitor your homelab with push notifications (ntfy)](005-uptime-kuma/) | [▶ watch](https://youtu.be/pExPTlWe5OU) |
 | 006 | [Restic backup tutorial: back up Docker Compose apps to a NAS over SFTP (and restore)](006-restic-backup/) | [▶ watch](https://youtu.be/j9rCJfzhKps) |
 | 007 | [WireGuard VPN setup on Debian 13: reach your homelab from anywhere (laptop + phone QR code)](007-wireguard/) | [▶ watch](https://youtu.be/tEgerx0zY3g) |
+| 008 | [AdGuard Home Docker Compose setup: block ads on your whole network + local DNS for your homelab](008-adguard-home/) | [▶ watch](https://youtu.be/KQttRigyk0c) |
 
 Licensed under the [MIT License](LICENSE).
