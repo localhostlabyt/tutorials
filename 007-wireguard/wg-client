@@ -1,0 +1,31 @@
+#!/bin/sh
+# Add a WireGuard client: wg-client NAME TUNNEL_IP SERVER_ADDRESS
+set -eu
+name=$1 addr=$2 endpoint=$3
+cd /etc/wireguard
+umask 077
+wg genkey > "$name.key"
+wg pubkey < "$name.key" > "$name.pub"
+
+# the server learns the client's public key and its tunnel address
+cat >> wg0.conf <<CONF
+
+[Peer]
+# $name
+PublicKey = $(cat "$name.pub")
+AllowedIPs = $addr/32
+CONF
+
+# the client gets its private key, and how to reach the server
+cat > "$name.conf" <<CONF
+[Interface]
+PrivateKey = $(cat "$name.key")
+Address = $addr/32
+
+[Peer]
+PublicKey = $(cat server.pub)
+Endpoint = $endpoint:51820
+AllowedIPs = 10.8.0.0/24
+PersistentKeepalive = 25
+CONF
+echo "created /etc/wireguard/$name.conf"
